@@ -1,7 +1,7 @@
-import { CONSTANTS } from 'c/alfaUtilities';
+import { CONSTANTS } from "c/i3sComponentUtilities";
 export function customEvent(state = {}, action) {
   switch (action.type) {
-    case 'dataTable/OPEN_RECORD':
+    case "dataTable/OPEN_RECORD":
       return {
         eventType: CONSTANTS.EVENT_TYPE.OPEN_RECORD,
         eventName: CONSTANTS.EVENT_TYPE.OPEN_RECORD,
@@ -9,13 +9,13 @@ export function customEvent(state = {}, action) {
           targetId: action.payload.targetId
         }
       };
-    case 'CLEAR_CUSTOM_EVENT':
+    case "CLEAR_CUSTOM_EVENT":
       return {
-        eventType: '',
-        eventName: '',
+        eventType: "",
+        eventName: "",
         params: {}
       };
-    case 'SEND_CUSTOM_EVENT':
+    case "SEND_CUSTOM_EVENT":
       return {
         eventType: action.payload.eventType,
         eventName: action.payload.eventName,

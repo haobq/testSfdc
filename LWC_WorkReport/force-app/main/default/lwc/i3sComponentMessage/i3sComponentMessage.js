@@ -18,8 +18,8 @@ import {
   showErrorToastWithoutTitle
 } from "c/i3sComponentUtilities";
 export { showMessage, handleException } from "./utilities";
-import Btn_Confirm from "@salesforce/label/c.EPCC_Btn_Confirm";
-import ErrMsg_SingleValidation from "@salesforce/label/c.EPCC_ErrMsg_SingleValidation";
+import Btn_Confirm from "@salesforce/label/c.Btn_Confirm";
+import ErrMsg_SingleValidation from "@salesforce/label/c.ErrMsg_SingleValidation";
 
 const mapDispatchToProps = {
   clearErrors,

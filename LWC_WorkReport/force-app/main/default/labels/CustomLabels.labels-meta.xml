@@ -1,122 +1,122 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
-        <fullName>EPCC_APIMsg_Exception</fullName>
+        <fullName>APIMsg_Exception</fullName>
         <language>ja</language>
         <protected>false</protected>
-        <shortDescription>EPCC_APIMsg_Exception</shortDescription>
+        <shortDescription>APIMsg_Exception</shortDescription>
         <value>{0}の{1}処理が異常終了しました</value>
     </labels>
     <labels>
-        <fullName>EPCC_APIMsg_ExcludedUser</fullName>
+        <fullName>APIMsg_ExcludedUser</fullName>
         <language>ja</language>
         <protected>false</protected>
-        <shortDescription>EPCC_APIMsg_ExcludedUser</shortDescription>
+        <shortDescription>APIMsg_ExcludedUser</shortDescription>
         <value>{0}は更新対象外のユーザです</value>
     </labels>
     <labels>
-        <fullName>EPCC_APIMsg_FiledRequired</fullName>
+        <fullName>APIMsg_FiledRequired</fullName>
         <language>ja</language>
         <protected>false</protected>
-        <shortDescription>EPCC_APIMsg_FiledRequired</shortDescription>
+        <shortDescription>APIMsg_FiledRequired</shortDescription>
         <value>項目「{0}」は必須です</value>
     </labels>
     <labels>
-        <fullName>EPCC_APIMsg_LicenseLimitExceeded</fullName>
+        <fullName>APIMsg_LicenseLimitExceeded</fullName>
         <language>ja</language>
         <protected>false</protected>
-        <shortDescription>EPCC_APIMsg_LicenseLimitExceeded</shortDescription>
+        <shortDescription>APIMsg_LicenseLimitExceeded</shortDescription>
         <value>ライセンス数がオーバーしたため、ユーザ有効化に失敗しました</value>
     </labels>
     <labels>
-        <fullName>EPCC_APIMsg_MaxProcessingExceeded</fullName>
+        <fullName>APIMsg_MaxProcessingExceeded</fullName>
         <language>ja</language>
         <protected>false</protected>
-        <shortDescription>EPCC_APIMsg_MaxProcessingExceeded</shortDescription>
+        <shortDescription>APIMsg_MaxProcessingExceeded</shortDescription>
         <value>最大処理件数を超えています。最大処理件数は{0}件です</value>
     </labels>
     <labels>
-        <fullName>EPCC_Btn_Confirm</fullName>
+        <fullName>Btn_Confirm</fullName>
         <language>ja</language>
         <protected>false</protected>
-        <shortDescription>EPCC_Btn_Confirm</shortDescription>
+        <shortDescription>Btn_Confirm</shortDescription>
         <value>確認</value>
     </labels>
     <labels>
-        <fullName>EPCC_Btn_Application_Save</fullName>
+        <fullName>Btn_Application_Save</fullName>
         <language>ja</language>
         <protected>false</protected>
-        <shortDescription>EPCC_Btn_Application_Save</shortDescription>
+        <shortDescription>Btn_Application_Save</shortDescription>
         <value>保存</value>
     </labels>
     <labels>
-        <fullName>EPCC_Btn_Application_SaveAsDraft</fullName>
+        <fullName>Btn_Application_SaveAsDraft</fullName>
         <language>ja</language>
         <protected>false</protected>
-        <shortDescription>EPCC_Btn_Application_SaveAsDraft</shortDescription>
+        <shortDescription>Btn_Application_SaveAsDraft</shortDescription>
         <value>一時保存</value>
     </labels>
     <labels>
-        <fullName>EPCC_Btn_BulkUpdate</fullName>
+        <fullName>Btn_BulkUpdate</fullName>
         <language>ja</language>
         <protected>false</protected>
         <shortDescription>BulkUpdate</shortDescription>
         <value>一括更新</value>
     </labels>
     <labels>
-        <fullName>EPCC_Btn_Cancel</fullName>
+        <fullName>Btn_Cancel</fullName>
         <language>ja</language>
         <protected>false</protected>
-        <shortDescription>EPCC_Btn_Cancel</shortDescription>
+        <shortDescription>Btn_Cancel</shortDescription>
         <value>キャンセル</value>
     </labels>
     <labels>
-        <fullName>EPCC_Btn_Clear</fullName>
+        <fullName>Btn_Clear</fullName>
         <language>ja</language>
         <protected>false</protected>
-        <shortDescription>EPCC_Btn_Clear</shortDescription>
+        <shortDescription>Btn_Clear</shortDescription>
         <value>クリア</value>
     </labels>
     <labels>
-        <fullName>EPCC_Btn_Close</fullName>
+        <fullName>Btn_Close</fullName>
         <language>ja</language>
         <protected>false</protected>
         <shortDescription>Close</shortDescription>
         <value>閉じる</value>
     </labels>
     <labels>
-        <fullName>EPCC_Btn_CloseFocusedTab</fullName>
+        <fullName>Btn_CloseFocusedTab</fullName>
         <language>ja</language>
         <protected>false</protected>
-        <shortDescription>EPCC_Btn_CloseFocusedTab</shortDescription>
+        <shortDescription>Btn_CloseFocusedTab</shortDescription>
         <value>タブを閉じる</value>
     </labels>
     <labels>
-        <fullName>EPCC_Btn_Copy</fullName>
+        <fullName>Btn_Copy</fullName>
         <language>ja</language>
         <protected>false</protected>
-        <shortDescription>EPCC_Btn_Copy</shortDescription>
+        <shortDescription>Btn_Copy</shortDescription>
         <value>コピー</value>
     </labels>
     <labels>
-        <fullName>EPCC_RelatedList_ShowAll</fullName>
+        <fullName>RelatedList_ShowAll</fullName>
         <language>ja</language>
         <protected>false</protected>
-        <shortDescription>EPCC_RelatedList_ShowAll</shortDescription>
+        <shortDescription>RelatedList_ShowAll</shortDescription>
         <value>すべて表示</value>
     </labels>
     <labels>
-        <fullName>EPCC_Sys_Mode_Edit</fullName>
+        <fullName>Sys_Mode_Edit</fullName>
         <language>ja</language>
         <protected>false</protected>
-        <shortDescription>EPCC_Sys_Mode_Edit</shortDescription>
+        <shortDescription>Sys_Mode_Edit</shortDescription>
         <value>EDIT</value>
     </labels>
     <labels>
-        <fullName>EPCC_Sys_Mode_New</fullName>
+        <fullName>Sys_Mode_New</fullName>
         <language>ja</language>
         <protected>false</protected>
-        <shortDescription>EPCC_Sys_Mode_New</shortDescription>
+        <shortDescription>Sys_Mode_New</shortDescription>
         <value>NEW</value>
     </labels>
     <labels>

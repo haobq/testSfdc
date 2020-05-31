@@ -1,4 +1,5 @@
 import { LightningElement, api, wire, track } from "lwc";
+import { CONSTANTS } from "c/i3sComponentConstants";
 import {
   regist,
   isEmpty,
