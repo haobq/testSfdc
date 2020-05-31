@@ -220,7 +220,7 @@ export const handlebuttonClicked = (btnName, pageName) => {
   };
 };
 
-/* epccLookupSearch dosearchイベント */
+/* LookupSearch dosearchイベント */
 export const doLookupSearch = (caller, keyword) => {
   return {
     type: "lookup/SEARCH",
@@ -260,7 +260,7 @@ export const updSearchSelection = (key, value) => {
   };
 };
 
-/* epccLookupSearch set input valueイベント */
+/* LookupSearch set input valueイベント */
 export const setLookupInputValue = (caller, value) => {
   return {
     type: "data/info/searchInput/UPDATE",
@@ -281,7 +281,7 @@ export const clearSearchSelection = (key) => {
   };
 };
 
-/* epccLookupSearch foucsイベント */
+/* LookupSearch foucsイベント */
 export const setLookupInputFoucs = (key) => {
   return {
     type: "data/info/searchInput/SET_FOUCS",
@@ -291,14 +291,14 @@ export const setLookupInputFoucs = (key) => {
   };
 };
 
-/* epccLookupSearch clear foucsイベント */
+/* LookupSearch clear foucsイベント */
 export const clearLookupInputFoucs = () => {
   return {
     type: "data/info/searchInput/CLEAR_FOUCS"
   };
 };
 
-/* epccDataTable display allイベント */
+/* DataTable display allイベント */
 export const displayAll = (params) => {
   let type = "dataTable/DISPLAY_ALL";
   if (!isEmpty(params.pageName)) {
@@ -313,7 +313,7 @@ export const displayAll = (params) => {
   };
 };
 
-/* epccDataTable checkbox onchangeイベント */
+/* DataTable checkbox onchangeイベント */
 export const checkInDataTable = (params) => {
   return {
     type: "dataTable/UPDATE_CHECKBOX_ONCHANGE_EVENT",
@@ -323,7 +323,7 @@ export const checkInDataTable = (params) => {
   };
 };
 
-/* epccDataTable button onclickイベント */
+/* DataTable button onclickイベント */
 export const handleDataTableButtonClicked = (event) => {
   const params = event.detail;
   return {
@@ -334,7 +334,7 @@ export const handleDataTableButtonClicked = (event) => {
   };
 };
 
-/* epccDataTable hyperlink(標準画面へ) onclickイベント */
+/* DataTable hyperlink(標準画面へ) onclickイベント */
 export const openRecord = (event) => {
   const targetId = event.detail;
   return {
@@ -345,7 +345,7 @@ export const openRecord = (event) => {
   };
 };
 
-/* epccDataTable hyperlink onclickイベント */
+/* DataTable hyperlink onclickイベント */
 export const openLink = (event) => {
   const params = event.detail;
   return {
