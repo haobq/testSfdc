@@ -1,0 +1,186 @@
+<!-- messageコンポーネント -->
+<template>
+  <!-- メッセージをtoastで表示 -->
+  <template if:true={showMessageInToast}>
+    <div class="forceToastManager--default forceToastManager" aria-live="assertive" data-aura-rendered-by="623:0;p" data-aura-class="forceToastManager--default forceToastManager">
+      <div data-aura-rendered-by="627:0;p" class="forceVisualMessageQueue" data-aura-class="forceVisualMessageQueue">
+        <!-- error -->
+        <template if:true={hasErrors}>
+          <div class="toastContainer slds-notify_container slds-is-relative">
+            <div class="slds-notify slds-notify_toast slds-theme_error toast-width" role="status">
+              <span class="slds-assistive-text">error</span>
+              <span class="slds-icon_container slds-icon-utility-error slds-m-right_small slds-no-flex slds-align-top">
+                <lightning-icon icon-name="utility:error"
+                                variant="inverse"
+                                class="slds-icon"
+                                size="small">
+                </lightning-icon>
+              </span>
+              <div class="slds-notify__content">
+                <h2 class="slds-text-heading_small">{dialogTitle.ERROR}</h2>
+                <template for:each={message.errors} for:item="error">
+                  <template for:each={error.msgs} for:item="msg">{msg}<br key={msg}></template>
+                </template>
+              </div>
+              <div class="slds-notify__close">
+                <button class="slds-button slds-button_icon slds-button_icon-inverse" title="閉じる" onclick={clearErrors}>
+                  <lightning-icon icon-name="utility:close"
+                                  alternative-text="閉じる"
+                                  size="small"
+                                  variant="inverse">
+                  </lightning-icon>
+                  <span class="slds-assistive-text">閉じる</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </template>
+        <!-- warning -->
+        <template if:true={hasWarns}>
+          <div class="toastContainer slds-notify_container slds-is-relative">
+            <div class="slds-notify slds-notify_toast slds-theme_warning toast-width" role="status">
+              <span class="slds-assistive-text">warning</span>
+              <span class="slds-icon_container slds-icon-utility-warning slds-m-right_small slds-no-flex slds-align-top">
+                <lightning-icon icon-name="utility:warning"
+                                variant="inverse"
+                                class="slds-icon"
+                                size="small">
+                </lightning-icon>
+              </span>
+              <div class="slds-notify__content">
+                <h2 class="slds-text-heading_small">{dialogTitle.WARN}</h2>
+                <template for:each={message.warns} for:item="warn">
+                  <template for:each={warn.msgs} for:item="msg">{msg}<br key={msg}></template>
+                </template>
+              </div>
+              <div class="slds-notify__close">
+                <button class="slds-button slds-button_icon slds-button_icon-inverse" title="閉じる" onclick={clearWarns}>
+                  <lightning-icon icon-name="utility:close"
+                                  alternative-text="閉じる"
+                                  size="small"
+                                  variant="inverse">
+                  </lightning-icon>
+                  <span class="slds-assistive-text">閉じる</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </template>
+        <!-- information -->
+        <template if:true={hasInfos}>
+          <div class="toastContainer slds-notify_container slds-is-relative">
+            <div class="slds-notify slds-notify_toast slds-theme_info toast-width" role="status">
+              <span class="slds-assistive-text">info</span>
+              <span class="slds-icon_container slds-icon-utility-info slds-m-right_small slds-no-flex slds-align-top">
+                <lightning-icon icon-name="utility:info"
+                                variant="inverse"
+                                class="slds-icon"
+                                size="small">
+                </lightning-icon>
+              </span>
+              <div class="slds-notify__content">
+                <h2 class="slds-text-heading_small">{dialogTitle.INFO}</h2>
+                <template for:each={message.infos} for:item="info">
+                  <template for:each={info.msgs} for:item="msg">{msg}<br key={msg}></template>
+                </template>
+              </div>
+              <div class="slds-notify__close">
+                <button class="slds-button slds-button_icon slds-button_icon-inverse" title="閉じる" onclick={clearInfos}>
+                  <lightning-icon icon-name="utility:close"
+                                  alternative-text="閉じる"
+                                  size="small"
+                                  variant="inverse">
+                  </lightning-icon>
+                  <span class="slds-assistive-text">閉じる</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </template>
+
+  <!-- メッセージをdialogで表示 -->
+  <template if:true={showMessageInDialog}>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+      <div class="slds-modal__container">
+        <header class="slds-modal__header">
+          <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="閉じる" onclick={clearMessage}>
+            <lightning-icon icon-name="utility:close"
+                            alternative-text="閉じる"
+                            variant="inverse"
+                            size="small" >
+            </lightning-icon>
+            <span class="slds-assistive-text">閉じる</span>
+          </button>
+          <h2 class="slds-modal__title slds-hyphenate">
+            <slot name="header">{dialogTitle}</slot>
+          </h2>
+        </header>
+        <div class="slds-modal__content slds-p-around_medium slds-p-left--medium dialog-height" id="modal-content-id-1">
+          <div class="slds-scope slds-m-left_small">
+            <ul>
+              <template for:each={message.errors} for:item="error">
+                <li key={error.key} class="error-msg">
+                  <template for:each={error.msgs} for:item="msg">{msg}<br key={msg}></template>
+                </li>
+              </template>
+            </ul>
+            <ul>
+              <template for:each={message.warns} for:item="warn">
+                <li key={warn.key} class="warning-msg">
+                  <template for:each={warn.msgs} for:item="msg">{msg}<br key={msg}></template>
+                </li>
+              </template>
+            </ul>
+            <ul>
+              <template for:each={message.infos} for:item="info">
+                <li key={info.key} class="info-msg">
+                  <template for:each={info.msgs} for:item="msg">{msg}<br key={msg}></template>
+                </li>
+              </template>
+            </ul>
+          </div>
+        </div>
+        <!-- ボタンエリア -->
+        <footer class="slds-modal__footer">
+          <lightning-button name={name}
+                            label={label.Btn_Confirm}
+                            variant="brand"
+                            onclick={clearMessage}>
+          </lightning-button>
+        </footer>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </template>
+
+  <!-- メッセージを画面の左上＋Toast通知 -->
+  <template if:true={showInPage}>
+    <div class="slds-scope slds-m-left_small">
+      <ul class="slds-m-left_medium">
+        <template for:each={message.errors} for:item="error">
+          <li key={error.key} class="error-msg">
+            <template for:each={error.msgs} for:item="msg">{msg}<br key={msg}></template>
+          </li>
+        </template>
+      </ul>
+      <ul class="slds-m-left_medium">
+        <template for:each={message.warns} for:item="warn">
+          <li key={warn.key} class="warning-msg">
+            <template for:each={warn.msgs} for:item="msg">{msg}<br key={msg}></template>
+          </li>
+        </template>
+      </ul>
+      <ul class="slds-m-left_medium">
+        <template for:each={message.infos} for:item="info">
+          <li key={info.key} class="info-msg">
+            <template for:each={info.msgs} for:item="msg">{msg}<br key={msg}></template>
+          </li>
+        </template>
+      </ul>
+    </div>
+  </template>
+
+</template>

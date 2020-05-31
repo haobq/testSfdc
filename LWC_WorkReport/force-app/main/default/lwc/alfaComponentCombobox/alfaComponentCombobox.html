@@ -1,0 +1,17 @@
+<template>
+  <div class={innerClass}>
+    <lightning-combobox name={columnName}
+                        options={innerOptions}
+                        value={value}
+                        label={innerLabel}
+                        variant={variant}
+                        disabled={disabled}
+                        onchange={handleInputChanged}
+                        placeholder="">
+    </lightning-combobox>
+    <!-- validation error -->
+    <template for:each={validationErrors} for:item="errMsg">
+      <div key={errMsg} class="slds-form-element__help">{errMsg}</div>
+    </template>
+  </div>
+</template>

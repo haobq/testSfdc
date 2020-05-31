@@ -1,0 +1,23 @@
+.error-msg {
+  color: var(--lwc-color-text-error, rgb(194, 57, 52));
+}
+.warning-msg {
+  color: var(--lwc-color-text-warning, rgb(255, 183, 93));
+}
+.info-msg {
+  color: var(--lwc-color-text-icon-default, rgb(112, 110, 107));
+}
+ol, ul {
+  list-style: disc;
+}
+.dialog-height {
+  height:200px;
+}
+.toast-width {
+  width:720px;
+}
+.forceToastManager--default .forceVisualMessageQueue {
+  position: fixed;
+  text-align: center;
+  top: 200px;
+}

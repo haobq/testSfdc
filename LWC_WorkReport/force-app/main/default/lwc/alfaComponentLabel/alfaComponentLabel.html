@@ -1,0 +1,13 @@
+<template>
+  <template if:true={showSection}>
+    <template if:true={hasVerticalLabel}>
+      <div class="slds-form-element__label">{label}</div>
+    </template>
+    <div style={innerstyle}>
+      <template if:true={hasHorizontalLabel}>
+        <span class="slds-form-element__label">{title}</span>
+      </template>
+      <span style="display:inline;" class="slds-form-element__static slds-grow">{innerValue}</span>
+    </div>
+  </template>
+</template>

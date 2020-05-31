@@ -1,0 +1,17 @@
+<template>
+  <div class={innerClass}>
+    <lightning-input type="Number"
+                     name={columnName}
+                     label={label}
+                     value={value}
+                     variant={variant}
+                     disabled={disabled}
+                     maxlength={maxLength}
+                     onchange={handleInputChanged}>
+    </lightning-input>
+    <!-- validation error -->
+    <template for:each={validationErrors} for:item="errMsg">
+      <div key={errMsg} class="slds-form-element__help">{errMsg}</div>
+    </template>
+  </div>
+</template>

@@ -1,0 +1,17 @@
+<template>
+  <div class={innerClass}>
+    <lightning-input type="date"
+                     name={columnName}
+                     label={label}
+                     value={value}
+                     variant={variant}
+                     disabled={disabled}
+                     onchange={handleInputChanged}
+                     message-when-bad-input={ErrMsg_InputInvalidDate}>
+    </lightning-input>
+    <!-- validation error -->
+    <template for:each={validationErrors} for:item="errMsg">
+      <div key={errMsg} class="slds-form-element__help">{errMsg}</div>
+    </template>
+  </div>
+</template>

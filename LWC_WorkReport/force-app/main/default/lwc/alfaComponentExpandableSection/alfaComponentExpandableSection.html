@@ -1,0 +1,17 @@
+<!-- 折り畳みコンポーネント -->
+<template>
+  <div class={isOpenClass}>
+    <h3 class="slds-section__title">
+      <button aria-expanded={isOpened} class="slds-button slds-section__title-action" onclick={toggle}>
+        <lightning-icon icon-name="utility:switch"
+                        class="slds-section__title-action-icon slds-button__icon slds-button__icon_left alfa-button__icon"
+                        size="x-small">
+        </lightning-icon>
+        <span class="slds-truncate" title={title}>{title}</span>
+      </button>
+    </h3>
+    <div aria-hidden="false" class="slds-section__content grow">
+      <slot></slot>
+    </div>
+  </div>
+</template>
