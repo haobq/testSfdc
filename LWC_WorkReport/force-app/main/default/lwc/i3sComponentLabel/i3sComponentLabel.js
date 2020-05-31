@@ -1,9 +1,9 @@
 import { LightningElement, api, wire, track } from "lwc";
-import { CONSTANTS } from "c/i3sComponentConstants";
 import {
   regist,
   isEmpty,
   getStoreData,
+  CONSTANTS,
   DEFAULT_DATA_NAME,
   MAP_DATA2OBJECT
 } from "c/i3sComponentUtilities";
