@@ -1,0 +1,33 @@
+<template>
+  <div class={innerClass}>
+    <div class="slds-form-element">
+      <template if:true={displayLabel}>
+        <template if:true={boldTitle}>
+          <label class="slds-form-element__legend slds-form-element__label"
+            >{label}</label
+          >
+        </template>
+        <template if:false={boldTitle}>{label}</template>
+      </template>
+      <div class="slds-form-element__control">
+        <template for:each={innerOptions} for:item="option">
+          <c-i3s-component-radio
+            key={option.value}
+            label={option.label}
+            value={option.value}
+            store-name={storeName}
+            vertical={vertical}
+            column-name={columnName}
+          >
+          </c-i3s-component-radio>
+        </template>
+      </div>
+    </div>
+    <!-- validation error -->
+    <template for:each={validationErrors} for:item="errMsg">
+      <div key={errMsg} class="slds-form-element slds-has-error">
+        <div class="slds-form-element__help">{errMsg}</div>
+      </div>
+    </template>
+  </div>
+</template>
