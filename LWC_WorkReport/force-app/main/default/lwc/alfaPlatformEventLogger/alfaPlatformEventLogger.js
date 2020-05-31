@@ -1,5 +1,4 @@
-// TODO: Change Object Name
-import createLog from '@salesforce/apex/EPCC_LoggerCtrl.createLog';
+import createLog from "@salesforce/apex/i3s_LoggerCtrl.createLog";
 
 // ログ出力処理のミドルウェア
 export default function createPlatformEventLogger() {
