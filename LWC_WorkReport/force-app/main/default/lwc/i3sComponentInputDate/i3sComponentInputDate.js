@@ -11,7 +11,7 @@ import {
   getSingleValidationErrors
 } from "c/i3sComponentUtilities";
 import { getObjectInfo } from "lightning/uiObjectInfoApi";
-import ErrMsg_InputInvalidDate from "@salesforce/label/c.EPCC_ErrMsg_InputInvalidDate";
+import ErrMsg_InputInvalidDate from "@salesforce/label/c.ErrMsg_InputInvalidDate";
 
 const mapDispatchToProps = {
   handleInputChanged

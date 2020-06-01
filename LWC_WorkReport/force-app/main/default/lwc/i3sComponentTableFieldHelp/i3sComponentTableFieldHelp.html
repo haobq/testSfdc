@@ -1,0 +1,18 @@
+<template>
+  <div>
+    <template if:true={bodyMessage}>
+      <section
+        aria-label="Dialog title"
+        aria-describedby="popover-body-id"
+        class="slds-popover"
+        role="dialog"
+      >
+        <div class="slds-popover__body">
+          <p>
+            {bodyMessage}
+          </p>
+        </div>
+      </section>
+    </template>
+  </div>
+</template>

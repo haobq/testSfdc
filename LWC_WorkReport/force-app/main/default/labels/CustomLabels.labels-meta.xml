@@ -106,6 +106,13 @@
         <value>全角カタカナ、全角英字(大文字)、全角数字で入力してください。ただし、「ヲ」、「ー」、「゛」、「゜」、半角スペースは入力不可です</value>
     </labels>
     <labels>
+        <fullName>ErrMsg_InputInvalidDate</fullName>
+        <language>ja</language>
+        <protected>false</protected>
+        <shortDescription>ErrMsg_InputInvalidDate</shortDescription>
+        <value>有効な日付を入力してください。</value>
+    </labels>
+    <labels>
         <fullName>ErrMsg_SingleValidationZenkakuNumericInput</fullName>
         <language>ja</language>
         <protected>false</protected>

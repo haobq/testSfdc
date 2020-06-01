@@ -1,7 +1,7 @@
 import { LightningElement, api, track } from "lwc";
 import { closeDialog } from "c/i3sComponentActions";
 import { regist, isEmpty } from "c/i3sComponentUtilities";
-import Btn_Confirm from "@salesforce/label/c.EPCC_Btn_Confirm";
+import Btn_Confirm from "@salesforce/label/c.Btn_Confirm";
 
 const mapStateToProps = (state) => ({
   dialog: state.dialog

@@ -1,0 +1,193 @@
+<template>
+  <template if:true={showHeader}>
+    <article class="slds-card slds-card_boundary">
+      <div class="slds-card__header slds-grid">
+        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+          <div class="slds-media__figure">
+            <span class="slds-icon_container">
+              <lightning-icon
+                icon-name={iconName}
+                size="small"
+              ></lightning-icon>
+            </span>
+          </div>
+          <div class="slds-media__body">
+            <h2 class="slds-card__header-title">
+              <span><b>{heading}</b></span>
+            </h2>
+          </div>
+        </header>
+      </div>
+      <div class="slds-card__body slds-card__body_inner">
+        <!-- has records -->
+        <template if:true={hasRecords}>
+          <div class="slds-scrollable_x">
+            <table
+              class="slds-table slds-table_cell-buffer slds-table_bordered"
+            >
+              <thead>
+                <tr class="slds-line-height_reset">
+                  <template if:true={showIndex}><th>No.</th></template>
+                  <template for:each={columns} for:item="column">
+                    <th key={column.fieldName} class={column.class} scope="col">
+                      {column.label}
+                    </th>
+                  </template>
+                </tr>
+              </thead>
+              <tbody>
+                <template for:each={records} for:item="record">
+                  <tr key={record.Id}>
+                    <template if:true={showIndex}>
+                      <td>
+                        <lightning-formatted-number
+                          value={record.index}
+                          minimum-integer-digits="3"
+                        ></lightning-formatted-number>
+                      </td>
+                    </template>
+                    <template for:each={columns} for:item="column">
+                      <template if:true={column.popoverMessageFieldName}>
+                        <td
+                          key={column.fieldName}
+                          class={column.class}
+                          data-index={record.index}
+                          data-fieldname={column.popoverMessageFieldName}
+                          onmouseover={handleOnMouseOver}
+                          onmouseout={handleOnMouseOut}
+                        >
+                          <c-i3s-component-output-field
+                            object={record}
+                            column={column}
+                            onchecked={handleChecked}
+                            onclicked={handleDataTableButtonClicked}
+                            onopenlink={openLink}
+                            onopenrecord={openRecord}
+                          >
+                          </c-i3s-component-output-field>
+                        </td>
+                      </template>
+                      <template if:false={column.popoverMessageFieldName}>
+                        <td key={column.fieldName} class={column.class}>
+                          <c-i3s-component-output-field
+                            object={record}
+                            column={column}
+                            onchecked={handleChecked}
+                            onclicked={handleDataTableButtonClicked}
+                            onopenlink={openLink}
+                            onopenrecord={openRecord}
+                          >
+                          </c-i3s-component-output-field>
+                        </td>
+                      </template>
+                    </template>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+            <c-i3s-component-table-field-help
+              topmargin={fieldHelpMsg.top}
+              leftmarginn={fieldHelpMsg.left}
+              message={fieldHelpMsg.message}
+            ></c-i3s-component-table-field-help>
+          </div>
+        </template>
+        <footer class="slds-card__footer">
+          <!-- すべて表示 -->
+          <template if:true={showDisplayAll}>
+            <a href="#" onclick={displayAllByTab}
+              >{label.Lbl_RelatedListShowAll}</a
+            >
+          </template>
+        </footer>
+      </div>
+    </article>
+  </template>
+
+  <template if:false={showHeader}>
+    <article class="slds-card">
+      <div class="slds-card__body">
+        <template if:true={hasRecords}>
+          <div class="slds-scrollable_x">
+            <table
+              class="slds-table slds-table_cell-buffer slds-table_bordered"
+            >
+              <thead>
+                <tr class="slds-line-height_reset">
+                  <template if:true={showIndex}><th>No.</th></template>
+                  <template for:each={columns} for:item="column">
+                    <th key={column.fieldName} class={column.class} scope="col">
+                      {column.label}
+                    </th>
+                  </template>
+                </tr>
+              </thead>
+              <tbody>
+                <template for:each={records} for:item="record">
+                  <tr key={record.Id}>
+                    <template if:true={showIndex}>
+                      <td>
+                        <lightning-formatted-number
+                          value={record.index}
+                          minimum-integer-digits="3"
+                        ></lightning-formatted-number>
+                      </td>
+                    </template>
+                    <template for:each={columns} for:item="column">
+                      <template if:true={column.popoverMessageFieldName}>
+                        <td
+                          key={column.fieldName}
+                          class={column.class}
+                          data-index={record.index}
+                          data-fieldname={column.popoverMessageFieldName}
+                          onmouseover={handleOnMouseOver}
+                          onmouseout={handleOnMouseOut}
+                        >
+                          <c-i3s-component-output-field
+                            object={record}
+                            column={column}
+                            onchecked={handleChecked}
+                            onclicked={handleDataTableButtonClicked}
+                            onopenlink={openLink}
+                            onopenrecord={openRecord}
+                          >
+                          </c-i3s-component-output-field>
+                        </td>
+                      </template>
+                      <template if:false={column.popoverMessageFieldName}>
+                        <td key={column.fieldName} class={column.class}>
+                          <c-i3s-component-output-field
+                            object={record}
+                            column={column}
+                            onchecked={handleChecked}
+                            onclicked={handleDataTableButtonClicked}
+                            onopenlink={openLink}
+                            onopenrecord={openRecord}
+                          >
+                          </c-i3s-component-output-field>
+                        </td>
+                      </template>
+                    </template>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+            <c-i3s-component-table-field-help
+              topmargin={fieldHelpMsg.top}
+              leftmarginn={fieldHelpMsg.left}
+              message={fieldHelpMsg.message}
+            ></c-i3s-component-table-field-help>
+          </div>
+        </template>
+      </div>
+      <footer class="slds-card__footer">
+        <!-- すべて表示 -->
+        <template if:true={showDisplayAll}>
+          <a href="#" onclick={displayAllByTab}
+            >{label.Lbl_RelatedListShowAll}</a
+          >
+        </template>
+      </footer>
+    </article>
+  </template>
+</template>

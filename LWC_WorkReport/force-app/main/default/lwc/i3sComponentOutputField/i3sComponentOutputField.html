@@ -1,0 +1,56 @@
+<template>
+  <!-- hyper link column -->
+  <template if:true={isHyperLink}>
+    <a href="#" onclick={onOpenLink}>
+      <template if:true={isDate}>
+        <lightning-formatted-date-time
+          value={fieldValue}
+        ></lightning-formatted-date-time>
+      </template>
+      <template if:true={isDatetime}>
+        <lightning-formatted-date-time
+          value={fieldValue}
+          year="numeric"
+          month="2-digit"
+          day="2-digit"
+          hour="2-digit"
+          minute="2-digit"
+        ></lightning-formatted-date-time>
+      </template>
+      <template if:true={isOther}>{fieldValue}</template>
+    </a>
+  </template>
+
+  <!-- not hyper link column -->
+  <template if:false={isHyperLink}>
+    <template if:true={isCheckbox}>
+      <lightning-input
+        type="checkbox"
+        onchange={onCheckBoxChanged}
+      ></lightning-input>
+    </template>
+    <template if:true={isDate}>
+      <lightning-formatted-date-time
+        value={fieldValue}
+      ></lightning-formatted-date-time>
+    </template>
+    <template if:true={isDatetime}>
+      <lightning-formatted-date-time
+        value={fieldValue}
+        year="numeric"
+        month="2-digit"
+        day="2-digit"
+        hour="2-digit"
+        minute="2-digit"
+      ></lightning-formatted-date-time>
+    </template>
+    <template if:true={isButton}>
+      <lightning-button
+        name={column.buttonName}
+        label={column.buttonLabel}
+        onclick={onButtonClicked}
+      ></lightning-button>
+    </template>
+    <template if:true={isOther}>{fieldValue}</template>
+  </template>
+</template>
