@@ -10,10 +10,6 @@ export const CONSTANTS = {
   LF: "\n",
   TAB: "\t",
   HANKA_SPACE: " ",
-  HANKA_HYPHEN: "-",
-  ZENKA_SPACE: "　",
-  ZENKA_HYPHEN: "‐",
-  ZENKA_SEMI_COLON: "：",
   EVENT_TYPE: {
     OPEN_SUB_TAB: "openSubTab",
     OPEN_FORM: "openForm",

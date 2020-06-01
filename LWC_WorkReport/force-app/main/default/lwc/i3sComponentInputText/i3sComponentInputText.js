@@ -7,7 +7,7 @@ import {
   getDisabled,
   DEFAULT_DATA_NAME,
   MAP_DATA2OBJECT,
-  getI3sComponentClass,
+  geti3sComponentClass,
   getSingleValidationErrors
 } from "c/i3sComponentUtilities";
 import { getObjectInfo } from "lightning/uiObjectInfoApi";
@@ -17,7 +17,7 @@ const mapDispatchToProps = {
   handleInputChanged
 };
 
-export default class I3sComponentInputText extends LightningElement {
+export default class i3sComponentInputText extends LightningElement {
   @api storeName;
   @api columnName;
   @api label;
@@ -69,7 +69,7 @@ export default class I3sComponentInputText extends LightningElement {
   mapStateToProps = (state) => ({
     value: getStoreData(state.data, this.columnName),
     disabled: getDisabled(state.control.disabled, this.columnName, false),
-    innerClass: getI3sComponentClass(state, this.columnName, this.outerClass),
+    innerClass: geti3sComponentClass(state, this.columnName, this.outerClass),
     validationErrors: getSingleValidationErrors(state, this.columnName)
   });
 
